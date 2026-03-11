@@ -1,0 +1,797 @@
+
+<html lang="zh-tw">
+
+<head>
+<title>明星雲學院 StartAca.com</title>
+<meta charset="big5">
+<meta name="title" content="明星雲學院 StartAca.com">
+<meta name="keywords" content="真人,直播,教學,美甲,美容,攝影,人文,金融,投資">
+<meta name="description" content="首創線上全程真人互動教學，只要有網路，免出門就可以上課，不論是手機、平板或是電腦，皆可用來上課喔!!">
+<meta property="og:description" content="首創線上全程真人互動教學，只要有網路，免出門就可以上課，不論是手機、平板或是電腦，皆可用來上課喔!!">
+<meta property="og:image" content="https://www.staraca.com/chinese/images/logo.jpeg">
+<meta property="og:type" content="website" />
+<meta property="og:url" content="https://www.staraca.com/chinese/edu/HOT.asp">
+<meta property="og:title" content="明星雲學院 StartAca.com">
+<link rel="shortcut icon" type="image/png" href="/favicon.png"/>
+<link href="/css/default.css" rel="stylesheet" type="text/css" />
+<style>
+.tbl{box-shadow:1px 1px 3px grey; }
+table.tbl2 {border-collapse:collapse;}
+table.tbl2 th,table.tbl2 td {border:1px solid #aaa}
+
+.td1{
+	-moz-background-size:200px;
+	-webkit-background-size:200px;
+	-o-background-size:200px;
+	background-size:200px;
+	position:relative;
+	overflow:hidden;
+}
+.td1 img{
+	position:absolute;
+	top:0;
+	left:0;
+}
+.td1:hover img:first-child {
+    -moz-transform: scale(1.1);
+    -webkit-transform: scale(1.1);
+    -o-transform: scale(1.1);
+    -ms-transform: scale(1.1);
+    transform: scale(1.1);
+}
+.box{display: inline-block;}
+.tdhid1{
+	border-bottom:solid 2px blue;
+}
+ul.submenuul li.tdhid1{
+	border-bottom:solid 2px blue;
+}
+
+
+table.draw {
+  text-transform: capitalize;
+  position: relative;
+}
+table.draw::before, table.draw::after {
+  box-sizing: border-box;
+  content: '';
+  position: absolute;
+  width: 100%;
+  height: 100%;
+}
+
+
+
+.draw {
+  -webkit-transition: color 0.25s;
+          transition: color 0.25s;
+}
+.draw::before, .draw::after {
+  border: 2px solid transparent;
+  width: 0;
+  height: 0;
+}
+.draw::before {
+  top: 0;
+  left: 0;
+}
+.draw::after {
+  bottom: 0;
+  right: 0;
+}
+.draw:hover {
+  /*color: #60daaa;*/
+  border: 2px;
+}
+
+.draw:hover::before, .draw:hover::after {
+  width: 100%;
+  height: 100%;
+}
+.draw:hover::before {
+  border-top-color: #60daaa;
+  border-right-color: #60daaa;
+  -webkit-transition: width 0.25s ease-out, height 0.25s ease-out 0.25s;
+          transition: width 0.25s ease-out, height 0.25s ease-out 0.25s;
+}
+.draw:hover::after {
+  border-bottom-color: #60daaa;
+  border-left-color: #60daaa;
+  -webkit-transition: border-color 0s ease-out 0.5s, width 0.25s ease-out 0.5s, height 0.25s ease-out 0.75s;
+          transition: border-color 0s ease-out 0.5s, width 0.25s ease-out 0.5s, height 0.25s ease-out 0.75s;
+}
+</style>
+
+
+<!-- Facebook Pixel Code -->
+<script>
+!function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;
+n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;
+t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,
+document,'script','https://connect.facebook.net/en_us/fbevents.js');
+fbq('init', '1828785340727283');
+fbq('track', 'PageView');
+</script>
+<noscript><img height="1" width="1" style="display:none"
+src="https://www.facebook.com/tr?id=1828785340727283&ev=PageView&noscript=1"
+/></noscript>
+<!-- DO NOT MODIFY -->
+<!-- End Facebook Pixel Code -->
+
+
+<script type="text/javascript" src="/jscript/jquery-1.9.1.js"></script>
+<script type="text/javascript">
+$(function(){
+$("#ctlBtn label").click(function(){
+	$("#maindiv a").hide()
+	$("."+$(this).attr("id")).show()
+	$(this).css("background-color","yellow").siblings().css("background-color","white")
+})
+$("#ctlBtn img")
+	.css({"height":"60px","width":"60px"})
+	.hover(
+	function(e){
+		$(this).attr("src",$(this).data("insrc"));
+		}
+	,	
+	function(e){
+		if(!$(this).hasClass("isclick")){
+			$(this).attr("src",$(this).data("outsrc"));
+		}
+		}
+	)
+	.click(function(e) {
+		$("#maindiv a").hide()
+		$("."+$(this).attr("id")).show()
+		$(".isclick").each(function(index, element) {
+            	$(this).attr("src",$(this).data("outsrc"))
+        	}).removeClass("isclick");
+		$(this).attr("src",$(this).data("insrc")).addClass("isclick");
+    });
+
+//$("#maindiv a:nth-child(4n)").after("<hr width='0px' color='#FFFFFF'>") 
+})
+</script>
+</head>
+
+<body>
+    <div style="width:940px; margin-left:auto; margin-right:auto; padding:0px;">
+        <!--------------------TOP Start-------------------->
+        
+<style>
+	.headerButtonTable1 a div:hover { color:#0066FF;}
+	a img{border:none;}
+	
+	.submenu{
+	float:left;margin:10 0; 
+	position:relative  ;
+	width: 100%;
+	}
+	ul.submenuul {
+	  padding-left:0px;
+	  Vertical-align:top;
+	  position:relative  ;
+	}
+	ul.submenuul li{
+	  display:inline-block;  
+	  position:relative  ;
+	  height:24px;
+	  
+	  border-bottom:solid 2px rgba(0,0,0,0); 
+	}
+	ul.submenuul li:first-child img{
+	  display:inline-block;  
+	  vertical-align:middle;
+	}
+	ul.submenuul li:not(:first-child) {
+	  margin-left:25px; 
+	  letter-spacing:1px;
+	  cursor:pointer;
+	}
+	ul.submenuul li:not(:first-child):hover{
+		border-bottom:solid 2px blue;
+	}
+	ul.submenuul li a{
+		font-weight: bold;
+		color:#808080; 
+		font-size: 16px;
+		text-align: center;
+	}
+	ul.submenuul li a:hover { color:#0066FF;}
+</style>
+<div style="height:150px; background-image: url('/images/bg/header.jpg'); padding:20px;">
+    <div style=" height:100px;">
+        <div style=" float:left; width:305px;">
+            <a href="/chinese/default.asp"><img id="Image1" title="明星雲學院 Star Academy" src="/images/icon/logo.png" alt="明星雲學院 Star Academy" /></a>                    
+        </div>
+        <div style=" text-align:center; float:right; width:450px; height:34px;background-image: url('/images/bg/headerMenu.png'); background-repeat: no-repeat; ">
+            <table cellpadding="0" cellspacing="0"  class="headerMenuTable">
+            
+                <tr>
+                    <td style=" border-right-width: 2px; width:110px "><a href="/chinese/login.asp">購物車</a></td>
+                    <td style=" border-right-width: 2px; width:110px "><a href="/chinese/news/newscon.asp?ID=8">聯絡我們</a></td>
+                    <td style=" border-right-width: 2px; width:110px "><a href="/chinese/member/apply.asp">立即註冊</a></td>
+                    <td style=" color:Yellow; width:110px "><a href="/chinese/login.asp">登入</a></td>
+                </tr>
+            
+            </table>
+        </div> 
+
+        <div style=" float:right; width:450px; padding-top:10px;">
+			<form name="formsearch" action="/chinese/edu/HOT.asp" method="post">
+            <table width="450">
+                <tr>
+                    <td width="*">
+                    	<input name="ky" type="text" id="ky" style="border-color:Silver;border-width:1px;border-style:Solid;height:30px;width:100%;" />
+                    </td>
+                    <td width="40px">
+                        <input type="image" name="ImageButton1" id="ImageButton1" src="/images/icon/search.png" onclick="formsearch.submit()" />
+                    </td>
+					
+                </tr>
+            </table>
+			</form>
+        </div>                
+                   
+    </div>
+
+    <div style=" padding-bottom:10px;" class="submenu">
+    <ul class="submenuul">
+    <li><img alt="" src="/images/icon/circle.png" /></li>
+    <li class="tdhid1"><a href="/chinese/edu/HOT.asp">熱門課程</a></li>
+    <li class="tdhid7"><a href="/chinese/edu/teach.asp">講師選課</a></li>
+    <li class="tdhid2"><a href="/chinese/edu/VideoTeach.asp">影片課程</a></li>
+    <li class="tdhid3"><a href="/chinese/edu/myedu.asp">我的課程</a></li>
+    <li class="tdhid4"><a href="/chinese/news/news.asp?show=news">最新消息</a></li>
+    <li class="tdhid5"><a href="/chinese/college/college.asp">學院介紹</a></li>
+    <li class="tdhid6"><a href="/chinese/edu/Manual.asp">操作教學</a></li>
+    </ul>
+    </div>
+    
+</div>
+
+<div class="fb-customerchat"
+  page_id="1178284978913063"
+  minimized="true">
+</div>
+
+<script>
+  window.fbAsyncInit = function() {
+    FB.init({
+      appId            : '1979661788960592',
+      autoLogAppEvents : true,
+      xfbml            : true,
+      version          : 'v2.11'
+    });
+  };
+  (function(d, s, id){
+     var js, fjs = d.getElementsByTagName(s)[0];
+     if (d.getElementById(id)) {return;}
+     js = d.createElement(s); js.id = id;
+     js.src = "https://connect.facebook.net/en_US/sdk/xfbml.customerchat.js";
+     fjs.parentNode.insertBefore(js, fjs);
+   }(document, 'script', 'facebook-jssdk'));
+</script>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-G2X6SMH4GM"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-G2X6SMH4GM');
+</script>
+        <!--------------------TOP End-------------------->
+    
+        <div style=" padding-left:10px; padding-right:10px; padding-top:10px;">
+        	
+            <table width="100%"  align="center" style="margin:0 10 ;">
+            <tr>
+               <td style="font-size:36px;" id="ctlBtn">
+               
+               <img id="type2" src="/chinese/images/C2.png" data-insrc="/chinese/images/CC2.png" data-outsrc="/chinese/images/C2.png">
+               <img id="type5" src="/chinese/images/C5.png" data-insrc="/chinese/images/CC5.png" data-outsrc="/chinese/images/C5.png">
+               <img id="type6" src="/chinese/images/C6.png" data-insrc="/chinese/images/CC6.png" data-outsrc="/chinese/images/C6.png">
+               <img id="type8" src="/chinese/images/C8.png" data-insrc="/chinese/images/CC8.png" data-outsrc="/chinese/images/C8.png">
+               <img id="type9" src="/chinese/images/C9.png" data-insrc="/chinese/images/CC9.png" data-outsrc="/chinese/images/C9.png">
+               
+                </td>
+            </tr>
+            </table>
+            <div style="width:100%; padding:0 20px;" id="maindiv">
+            	<a href="/chinese/edu/educon.asp?ID=4138" class="type5 box">
+					<table width="200px" class="tbl"  align="left" style=" border:0px;margin:5px;" cellpadding="0" cellspacing="0">
+					<tr><td class="td1" colspan="2" height="200px" valign="top" style="padding:0" >
+                    <img src="/startacademy/Edu/4138/images/b01.jpg"  height="200px">
+                    <img src="/chinese/images/tag-5.png" >
+                    </td></tr>
+					<tr><td colspan="2" style="font-weight:bold; font-size:20px; color:black; height:82px;">刀際效應-每週三海期盤勢經驗分享(2026/03)</td></tr>
+					<tr><td colspan="2" style=" height:40px;font-weight:bold;">2026/03/11&nbsp;&nbsp;2000~2030</td></tr>
+					<tr>
+                    	<td align="left" style="padding:0px; margin:0px; width:47px;"><img src="../images/btncar.jpg" style="margin:0px; padding:0px; width:100%; height:100%; border:none; "></td>
+                    	<td>價格&nbsp;
+                        	<font style=" color:#C98EBE; font-size:20px; font-weight:bold;">
+                            
+                                NT：2000
+                            </font>
+                        </td>
+                    </tr>
+					</table>
+                    </a>
+					<a href="/chinese/edu/educon.asp?ID=4276" class="type5 box">
+					<table width="200px" class="tbl"  align="left" style=" border:0px;margin:5px;" cellpadding="0" cellspacing="0">
+					<tr><td class="td1" colspan="2" height="200px" valign="top" style="padding:0" >
+                    <img src="/startacademy/Edu/4276/images/b01.jpg"  height="200px">
+                    <img src="/chinese/images/tag-5.png" >
+                    </td></tr>
+					<tr><td colspan="2" style="font-weight:bold; font-size:20px; color:black; height:82px;">海期實戰教室(線上)一個月期(2603)</td></tr>
+					<tr><td colspan="2" style=" height:40px;font-weight:bold;">2026/03/11&nbsp;&nbsp;2100~2355</td></tr>
+					<tr>
+                    	<td align="left" style="padding:0px; margin:0px; width:47px;"><img src="../images/btncar.jpg" style="margin:0px; padding:0px; width:100%; height:100%; border:none; "></td>
+                    	<td>價格&nbsp;
+                        	<font style=" color:#C98EBE; font-size:20px; font-weight:bold;">
+                            
+                                NT：10000
+                            </font>
+                        </td>
+                    </tr>
+					</table>
+                    </a>
+					<a href="/chinese/edu/educon.asp?ID=4476" class="type5 box">
+					<table width="200px" class="tbl"  align="left" style=" border:0px;margin:5px;" cellpadding="0" cellspacing="0">
+					<tr><td class="td1" colspan="2" height="200px" valign="top" style="padding:0" >
+                    <img src="/startacademy/Edu/4476/images/b01.jpg"  height="200px">
+                    <img src="/chinese/images/tag-5.png" >
+                    </td></tr>
+					<tr><td colspan="2" style="font-weight:bold; font-size:20px; color:black; height:82px;">凱子小刀量化機器人課程(6個月期)</td></tr>
+					<tr><td colspan="2" style=" height:40px;font-weight:bold;">2026/03/31&nbsp;&nbsp;0000~2359</td></tr>
+					<tr>
+                    	<td align="left" style="padding:0px; margin:0px; width:47px;"><img src="../images/btncar.jpg" style="margin:0px; padding:0px; width:100%; height:100%; border:none; "></td>
+                    	<td>價格&nbsp;
+                        	<font style=" color:#C98EBE; font-size:20px; font-weight:bold;">
+                            
+                                NT：48000
+                            </font>
+                        </td>
+                    </tr>
+					</table>
+                    </a>
+					<a href="/chinese/edu/educon.asp?ID=4477" class="type5 box">
+					<table width="200px" class="tbl"  align="left" style=" border:0px;margin:5px;" cellpadding="0" cellspacing="0">
+					<tr><td class="td1" colspan="2" height="200px" valign="top" style="padding:0" >
+                    <img src="/startacademy/Edu/4477/images/b01.jpg"  height="200px">
+                    <img src="/chinese/images/tag-5.png" >
+                    </td></tr>
+					<tr><td colspan="2" style="font-weight:bold; font-size:20px; color:black; height:82px;">刀派手單台指期專修課</td></tr>
+					<tr><td colspan="2" style=" height:40px;font-weight:bold;">2026/03/31&nbsp;&nbsp;0000~2359</td></tr>
+					<tr>
+                    	<td align="left" style="padding:0px; margin:0px; width:47px;"><img src="../images/btncar.jpg" style="margin:0px; padding:0px; width:100%; height:100%; border:none; "></td>
+                    	<td>價格&nbsp;
+                        	<font style=" color:#C98EBE; font-size:20px; font-weight:bold;">
+                            
+                                NT：12000
+                            </font>
+                        </td>
+                    </tr>
+					</table>
+                    </a>
+					<a href="/chinese/edu/educon.asp?ID=4472" class="type5 box">
+					<table width="200px" class="tbl"  align="left" style=" border:0px;margin:5px;" cellpadding="0" cellspacing="0">
+					<tr><td class="td1" colspan="2" height="200px" valign="top" style="padding:0" >
+                    <img src="/startacademy/Edu/4472/images/b01.jpg"  height="200px">
+                    <img src="/chinese/images/tag-5.png" >
+                    </td></tr>
+					<tr><td colspan="2" style="font-weight:bold; font-size:20px; color:black; height:82px;">刀派期權實戰必備戰技</td></tr>
+					<tr><td colspan="2" style=" height:40px;font-weight:bold;">2026/03/31&nbsp;&nbsp;0000~2359</td></tr>
+					<tr>
+                    	<td align="left" style="padding:0px; margin:0px; width:47px;"><img src="../images/btncar.jpg" style="margin:0px; padding:0px; width:100%; height:100%; border:none; "></td>
+                    	<td>價格&nbsp;
+                        	<font style=" color:#C98EBE; font-size:20px; font-weight:bold;">
+                            
+                                NT：13500
+                            </font>
+                        </td>
+                    </tr>
+					</table>
+                    </a>
+					<a href="/chinese/edu/educon.asp?ID=4470" class="type8 box">
+					<table width="200px" class="tbl"  align="left" style=" border:0px;margin:5px;" cellpadding="0" cellspacing="0">
+					<tr><td class="td1" colspan="2" height="200px" valign="top" style="padding:0" >
+                    <img src="/startacademy/Edu/4470/images/b01.jpg"  height="200px">
+                    <img src="/chinese/images/tag-8.png" >
+                    </td></tr>
+					<tr><td colspan="2" style="font-weight:bold; font-size:20px; color:black; height:82px;">我是交易員</td></tr>
+					<tr><td colspan="2" style=" height:40px;font-weight:bold;">2026/03/31&nbsp;&nbsp;0000~2359</td></tr>
+					<tr>
+                    	<td align="left" style="padding:0px; margin:0px; width:47px;"><img src="../images/btncar.jpg" style="margin:0px; padding:0px; width:100%; height:100%; border:none; "></td>
+                    	<td>價格&nbsp;
+                        	<font style=" color:#C98EBE; font-size:20px; font-weight:bold;">
+                            
+                                NT：8000
+                            </font>
+                        </td>
+                    </tr>
+					</table>
+                    </a>
+					<a href="/chinese/edu/product.asp?ID=4469" class="type5 box">
+					<table width="200px" class="tbl"  align="left" style=" border:0px;margin:5px;" cellpadding="0" cellspacing="0">
+					<tr><td class="td1" colspan="2" height="200px" valign="top" style="padding:0" >
+                    <img src="/startacademy/Edu/4469/images/b01.jpg"  height="200px">
+                    <img src="/chinese/images/tag-5.png" >
+                    </td></tr>
+					<tr><td colspan="2" style="font-weight:bold; font-size:20px; color:black; height:82px;">刀際效應--海期盤勢經驗分享(2603-2608半年期)</td></tr>
+					<tr><td colspan="2" style=" height:40px;font-weight:bold;">2026/03/31&nbsp;&nbsp;2000~2030</td></tr>
+					<tr>
+                    	<td align="left" style="padding:0px; margin:0px; width:47px;"><img src="../images/btncar.jpg" style="margin:0px; padding:0px; width:100%; height:100%; border:none; "></td>
+                    	<td>價格&nbsp;
+                        	<font style=" color:#C98EBE; font-size:20px; font-weight:bold;">
+                            
+                                NT：10800
+                            </font>
+                        </td>
+                    </tr>
+					</table>
+                    </a>
+					<a href="/chinese/edu/product.asp?ID=4473" class="type5 box">
+					<table width="200px" class="tbl"  align="left" style=" border:0px;margin:5px;" cellpadding="0" cellspacing="0">
+					<tr><td class="td1" colspan="2" height="200px" valign="top" style="padding:0" >
+                    <img src="/startacademy/Edu/4473/images/b01.jpg"  height="200px">
+                    <img src="/chinese/images/tag-5.png" >
+                    </td></tr>
+					<tr><td colspan="2" style="font-weight:bold; font-size:20px; color:black; height:82px;">期實戰教室(線上)三個月期(2603-2605)</td></tr>
+					<tr><td colspan="2" style=" height:40px;font-weight:bold;">2026/03/31&nbsp;&nbsp;2200~0400</td></tr>
+					<tr>
+                    	<td align="left" style="padding:0px; margin:0px; width:47px;"><img src="../images/btncar.jpg" style="margin:0px; padding:0px; width:100%; height:100%; border:none; "></td>
+                    	<td>價格&nbsp;
+                        	<font style=" color:#C98EBE; font-size:20px; font-weight:bold;">
+                            
+                                NT：27000
+                            </font>
+                        </td>
+                    </tr>
+					</table>
+                    </a>
+					<a href="/chinese/edu/educon.asp?ID=4321" class="type5 box">
+					<table width="200px" class="tbl"  align="left" style=" border:0px;margin:5px;" cellpadding="0" cellspacing="0">
+					<tr><td class="td1" colspan="2" height="200px" valign="top" style="padding:0" >
+                    <img src="/startacademy/Edu/4321/images/b01.jpg"  height="200px">
+                    <img src="/chinese/images/tag-5.png" >
+                    </td></tr>
+					<tr><td colspan="2" style="font-weight:bold; font-size:20px; color:black; height:82px;">刀際效應-每週三海期盤勢經驗分享(2026/04)</td></tr>
+					<tr><td colspan="2" style=" height:40px;font-weight:bold;">2026/04/01&nbsp;&nbsp;2000~2030</td></tr>
+					<tr>
+                    	<td align="left" style="padding:0px; margin:0px; width:47px;"><img src="../images/btncar.jpg" style="margin:0px; padding:0px; width:100%; height:100%; border:none; "></td>
+                    	<td>價格&nbsp;
+                        	<font style=" color:#C98EBE; font-size:20px; font-weight:bold;">
+                            
+                                NT：2000
+                            </font>
+                        </td>
+                    </tr>
+					</table>
+                    </a>
+					<a href="/chinese/edu/educon.asp?ID=4341" class="type5 box">
+					<table width="200px" class="tbl"  align="left" style=" border:0px;margin:5px;" cellpadding="0" cellspacing="0">
+					<tr><td class="td1" colspan="2" height="200px" valign="top" style="padding:0" >
+                    <img src="/startacademy/Edu/4341/images/b01.jpg"  height="200px">
+                    <img src="/chinese/images/tag-5.png" >
+                    </td></tr>
+					<tr><td colspan="2" style="font-weight:bold; font-size:20px; color:black; height:82px;">海期實戰教室(線上)一個月期(2604)</td></tr>
+					<tr><td colspan="2" style=" height:40px;font-weight:bold;">2026/04/01&nbsp;&nbsp;2100~2355</td></tr>
+					<tr>
+                    	<td align="left" style="padding:0px; margin:0px; width:47px;"><img src="../images/btncar.jpg" style="margin:0px; padding:0px; width:100%; height:100%; border:none; "></td>
+                    	<td>價格&nbsp;
+                        	<font style=" color:#C98EBE; font-size:20px; font-weight:bold;">
+                            
+                                NT：10000
+                            </font>
+                        </td>
+                    </tr>
+					</table>
+                    </a>
+					<a href="/chinese/edu/educon.asp?ID=4342" class="type5 box">
+					<table width="200px" class="tbl"  align="left" style=" border:0px;margin:5px;" cellpadding="0" cellspacing="0">
+					<tr><td class="td1" colspan="2" height="200px" valign="top" style="padding:0" >
+                    <img src="/startacademy/Edu/4342/images/b01.jpg"  height="200px">
+                    <img src="/chinese/images/tag-5.png" >
+                    </td></tr>
+					<tr><td colspan="2" style="font-weight:bold; font-size:20px; color:black; height:82px;">海期實戰教室(線上)一個月期(2605)</td></tr>
+					<tr><td colspan="2" style=" height:40px;font-weight:bold;">2026/05/01&nbsp;&nbsp;2100~2355</td></tr>
+					<tr>
+                    	<td align="left" style="padding:0px; margin:0px; width:47px;"><img src="../images/btncar.jpg" style="margin:0px; padding:0px; width:100%; height:100%; border:none; "></td>
+                    	<td>價格&nbsp;
+                        	<font style=" color:#C98EBE; font-size:20px; font-weight:bold;">
+                            
+                                NT：10000
+                            </font>
+                        </td>
+                    </tr>
+					</table>
+                    </a>
+					<a href="/chinese/edu/educon.asp?ID=4325" class="type5 box">
+					<table width="200px" class="tbl"  align="left" style=" border:0px;margin:5px;" cellpadding="0" cellspacing="0">
+					<tr><td class="td1" colspan="2" height="200px" valign="top" style="padding:0" >
+                    <img src="/startacademy/Edu/4325/images/b01.jpg"  height="200px">
+                    <img src="/chinese/images/tag-5.png" >
+                    </td></tr>
+					<tr><td colspan="2" style="font-weight:bold; font-size:20px; color:black; height:82px;">刀際效應-每週三海期盤勢經驗分享(2026/05)</td></tr>
+					<tr><td colspan="2" style=" height:40px;font-weight:bold;">2026/05/06&nbsp;&nbsp;2000~2030</td></tr>
+					<tr>
+                    	<td align="left" style="padding:0px; margin:0px; width:47px;"><img src="../images/btncar.jpg" style="margin:0px; padding:0px; width:100%; height:100%; border:none; "></td>
+                    	<td>價格&nbsp;
+                        	<font style=" color:#C98EBE; font-size:20px; font-weight:bold;">
+                            
+                                NT：2000
+                            </font>
+                        </td>
+                    </tr>
+					</table>
+                    </a>
+					<a href="/chinese/edu/educon.asp?ID=4343" class="type5 box">
+					<table width="200px" class="tbl"  align="left" style=" border:0px;margin:5px;" cellpadding="0" cellspacing="0">
+					<tr><td class="td1" colspan="2" height="200px" valign="top" style="padding:0" >
+                    <img src="/startacademy/Edu/4343/images/b01.jpg"  height="200px">
+                    <img src="/chinese/images/tag-5.png" >
+                    </td></tr>
+					<tr><td colspan="2" style="font-weight:bold; font-size:20px; color:black; height:82px;">海期實戰教室(線上)一個月期(2606)</td></tr>
+					<tr><td colspan="2" style=" height:40px;font-weight:bold;">2026/06/01&nbsp;&nbsp;2100~2355</td></tr>
+					<tr>
+                    	<td align="left" style="padding:0px; margin:0px; width:47px;"><img src="../images/btncar.jpg" style="margin:0px; padding:0px; width:100%; height:100%; border:none; "></td>
+                    	<td>價格&nbsp;
+                        	<font style=" color:#C98EBE; font-size:20px; font-weight:bold;">
+                            
+                                NT：10000
+                            </font>
+                        </td>
+                    </tr>
+					</table>
+                    </a>
+					<a href="/chinese/edu/educon.asp?ID=4326" class="type5 box">
+					<table width="200px" class="tbl"  align="left" style=" border:0px;margin:5px;" cellpadding="0" cellspacing="0">
+					<tr><td class="td1" colspan="2" height="200px" valign="top" style="padding:0" >
+                    <img src="/startacademy/Edu/4326/images/b01.jpg"  height="200px">
+                    <img src="/chinese/images/tag-5.png" >
+                    </td></tr>
+					<tr><td colspan="2" style="font-weight:bold; font-size:20px; color:black; height:82px;">刀際效應-每週三海期盤勢經驗分享(2026/06)</td></tr>
+					<tr><td colspan="2" style=" height:40px;font-weight:bold;">2026/06/03&nbsp;&nbsp;2000~2030</td></tr>
+					<tr>
+                    	<td align="left" style="padding:0px; margin:0px; width:47px;"><img src="../images/btncar.jpg" style="margin:0px; padding:0px; width:100%; height:100%; border:none; "></td>
+                    	<td>價格&nbsp;
+                        	<font style=" color:#C98EBE; font-size:20px; font-weight:bold;">
+                            
+                                NT：2000
+                            </font>
+                        </td>
+                    </tr>
+					</table>
+                    </a>
+					<a href="/chinese/edu/educon.asp?ID=4327" class="type5 box">
+					<table width="200px" class="tbl"  align="left" style=" border:0px;margin:5px;" cellpadding="0" cellspacing="0">
+					<tr><td class="td1" colspan="2" height="200px" valign="top" style="padding:0" >
+                    <img src="/startacademy/Edu/4327/images/b01.jpg"  height="200px">
+                    <img src="/chinese/images/tag-5.png" >
+                    </td></tr>
+					<tr><td colspan="2" style="font-weight:bold; font-size:20px; color:black; height:82px;">刀際效應-每週三海期盤勢經驗分享(2026/07)</td></tr>
+					<tr><td colspan="2" style=" height:40px;font-weight:bold;">2026/07/01&nbsp;&nbsp;2000~2030</td></tr>
+					<tr>
+                    	<td align="left" style="padding:0px; margin:0px; width:47px;"><img src="../images/btncar.jpg" style="margin:0px; padding:0px; width:100%; height:100%; border:none; "></td>
+                    	<td>價格&nbsp;
+                        	<font style=" color:#C98EBE; font-size:20px; font-weight:bold;">
+                            
+                                NT：2000
+                            </font>
+                        </td>
+                    </tr>
+					</table>
+                    </a>
+					<a href="/chinese/edu/educon.asp?ID=4344" class="type5 box">
+					<table width="200px" class="tbl"  align="left" style=" border:0px;margin:5px;" cellpadding="0" cellspacing="0">
+					<tr><td class="td1" colspan="2" height="200px" valign="top" style="padding:0" >
+                    <img src="/startacademy/Edu/4344/images/b01.jpg"  height="200px">
+                    <img src="/chinese/images/tag-5.png" >
+                    </td></tr>
+					<tr><td colspan="2" style="font-weight:bold; font-size:20px; color:black; height:82px;">海期實戰教室(線上)一個月期(2607)</td></tr>
+					<tr><td colspan="2" style=" height:40px;font-weight:bold;">2026/07/01&nbsp;&nbsp;2100~2355</td></tr>
+					<tr>
+                    	<td align="left" style="padding:0px; margin:0px; width:47px;"><img src="../images/btncar.jpg" style="margin:0px; padding:0px; width:100%; height:100%; border:none; "></td>
+                    	<td>價格&nbsp;
+                        	<font style=" color:#C98EBE; font-size:20px; font-weight:bold;">
+                            
+                                NT：10000
+                            </font>
+                        </td>
+                    </tr>
+					</table>
+                    </a>
+					<a href="/chinese/edu/educon.asp?ID=4345" class="type5 box">
+					<table width="200px" class="tbl"  align="left" style=" border:0px;margin:5px;" cellpadding="0" cellspacing="0">
+					<tr><td class="td1" colspan="2" height="200px" valign="top" style="padding:0" >
+                    <img src="/startacademy/Edu/4345/images/b01.jpg"  height="200px">
+                    <img src="/chinese/images/tag-5.png" >
+                    </td></tr>
+					<tr><td colspan="2" style="font-weight:bold; font-size:20px; color:black; height:82px;">海期實戰教室(線上)一個月期(2608)</td></tr>
+					<tr><td colspan="2" style=" height:40px;font-weight:bold;">2026/08/03&nbsp;&nbsp;2100~2355</td></tr>
+					<tr>
+                    	<td align="left" style="padding:0px; margin:0px; width:47px;"><img src="../images/btncar.jpg" style="margin:0px; padding:0px; width:100%; height:100%; border:none; "></td>
+                    	<td>價格&nbsp;
+                        	<font style=" color:#C98EBE; font-size:20px; font-weight:bold;">
+                            
+                                NT：10000
+                            </font>
+                        </td>
+                    </tr>
+					</table>
+                    </a>
+					<a href="/chinese/edu/educon.asp?ID=4328" class="type5 box">
+					<table width="200px" class="tbl"  align="left" style=" border:0px;margin:5px;" cellpadding="0" cellspacing="0">
+					<tr><td class="td1" colspan="2" height="200px" valign="top" style="padding:0" >
+                    <img src="/startacademy/Edu/4328/images/b01.jpg"  height="200px">
+                    <img src="/chinese/images/tag-5.png" >
+                    </td></tr>
+					<tr><td colspan="2" style="font-weight:bold; font-size:20px; color:black; height:82px;">刀際效應-每週三海期盤勢經驗分享(2026/08)</td></tr>
+					<tr><td colspan="2" style=" height:40px;font-weight:bold;">2026/08/05&nbsp;&nbsp;2000~2030</td></tr>
+					<tr>
+                    	<td align="left" style="padding:0px; margin:0px; width:47px;"><img src="../images/btncar.jpg" style="margin:0px; padding:0px; width:100%; height:100%; border:none; "></td>
+                    	<td>價格&nbsp;
+                        	<font style=" color:#C98EBE; font-size:20px; font-weight:bold;">
+                            
+                                NT：2000
+                            </font>
+                        </td>
+                    </tr>
+					</table>
+                    </a>
+					<a href="/chinese/edu/educon.asp?ID=4329" class="type5 box">
+					<table width="200px" class="tbl"  align="left" style=" border:0px;margin:5px;" cellpadding="0" cellspacing="0">
+					<tr><td class="td1" colspan="2" height="200px" valign="top" style="padding:0" >
+                    <img src="/startacademy/Edu/4329/images/b01.jpg"  height="200px">
+                    <img src="/chinese/images/tag-5.png" >
+                    </td></tr>
+					<tr><td colspan="2" style="font-weight:bold; font-size:20px; color:black; height:82px;">刀際效應-每週三海期盤勢經驗分享(2026/09)</td></tr>
+					<tr><td colspan="2" style=" height:40px;font-weight:bold;">2026/09/02&nbsp;&nbsp;2000~2030</td></tr>
+					<tr>
+                    	<td align="left" style="padding:0px; margin:0px; width:47px;"><img src="../images/btncar.jpg" style="margin:0px; padding:0px; width:100%; height:100%; border:none; "></td>
+                    	<td>價格&nbsp;
+                        	<font style=" color:#C98EBE; font-size:20px; font-weight:bold;">
+                            
+                                NT：2000
+                            </font>
+                        </td>
+                    </tr>
+					</table>
+                    </a>
+					<a href="/chinese/edu/educon.asp?ID=4346" class="type5 box">
+					<table width="200px" class="tbl"  align="left" style=" border:0px;margin:5px;" cellpadding="0" cellspacing="0">
+					<tr><td class="td1" colspan="2" height="200px" valign="top" style="padding:0" >
+                    <img src="/startacademy/Edu/4346/images/b01.jpg"  height="200px">
+                    <img src="/chinese/images/tag-5.png" >
+                    </td></tr>
+					<tr><td colspan="2" style="font-weight:bold; font-size:20px; color:black; height:82px;">海期實戰教室(線上)一個月期(2609)</td></tr>
+					<tr><td colspan="2" style=" height:40px;font-weight:bold;">2026/09/02&nbsp;&nbsp;2100~2355</td></tr>
+					<tr>
+                    	<td align="left" style="padding:0px; margin:0px; width:47px;"><img src="../images/btncar.jpg" style="margin:0px; padding:0px; width:100%; height:100%; border:none; "></td>
+                    	<td>價格&nbsp;
+                        	<font style=" color:#C98EBE; font-size:20px; font-weight:bold;">
+                            
+                                NT：10000
+                            </font>
+                        </td>
+                    </tr>
+					</table>
+                    </a>
+					<a href="/chinese/edu/educon.asp?ID=4347" class="type5 box">
+					<table width="200px" class="tbl"  align="left" style=" border:0px;margin:5px;" cellpadding="0" cellspacing="0">
+					<tr><td class="td1" colspan="2" height="200px" valign="top" style="padding:0" >
+                    <img src="/startacademy/Edu/4347/images/b01.jpg"  height="200px">
+                    <img src="/chinese/images/tag-5.png" >
+                    </td></tr>
+					<tr><td colspan="2" style="font-weight:bold; font-size:20px; color:black; height:82px;">海期實戰教室(線上)一個月期(2610)</td></tr>
+					<tr><td colspan="2" style=" height:40px;font-weight:bold;">2026/10/02&nbsp;&nbsp;2100~2355</td></tr>
+					<tr>
+                    	<td align="left" style="padding:0px; margin:0px; width:47px;"><img src="../images/btncar.jpg" style="margin:0px; padding:0px; width:100%; height:100%; border:none; "></td>
+                    	<td>價格&nbsp;
+                        	<font style=" color:#C98EBE; font-size:20px; font-weight:bold;">
+                            
+                                NT：10000
+                            </font>
+                        </td>
+                    </tr>
+					</table>
+                    </a>
+					<a href="/chinese/edu/educon.asp?ID=4330" class="type5 box">
+					<table width="200px" class="tbl"  align="left" style=" border:0px;margin:5px;" cellpadding="0" cellspacing="0">
+					<tr><td class="td1" colspan="2" height="200px" valign="top" style="padding:0" >
+                    <img src="/startacademy/Edu/4330/images/b01.jpg"  height="200px">
+                    <img src="/chinese/images/tag-5.png" >
+                    </td></tr>
+					<tr><td colspan="2" style="font-weight:bold; font-size:20px; color:black; height:82px;">刀際效應-每週三海期盤勢經驗分享(2026/10)</td></tr>
+					<tr><td colspan="2" style=" height:40px;font-weight:bold;">2026/10/07&nbsp;&nbsp;2000~2030</td></tr>
+					<tr>
+                    	<td align="left" style="padding:0px; margin:0px; width:47px;"><img src="../images/btncar.jpg" style="margin:0px; padding:0px; width:100%; height:100%; border:none; "></td>
+                    	<td>價格&nbsp;
+                        	<font style=" color:#C98EBE; font-size:20px; font-weight:bold;">
+                            
+                                NT：2000
+                            </font>
+                        </td>
+                    </tr>
+					</table>
+                    </a>
+					<a href="/chinese/edu/educon.asp?ID=4355" class="type5 box">
+					<table width="200px" class="tbl"  align="left" style=" border:0px;margin:5px;" cellpadding="0" cellspacing="0">
+					<tr><td class="td1" colspan="2" height="200px" valign="top" style="padding:0" >
+                    <img src="/startacademy/Edu/4355/images/b01.jpg"  height="200px">
+                    <img src="/chinese/images/tag-5.png" >
+                    </td></tr>
+					<tr><td colspan="2" style="font-weight:bold; font-size:20px; color:black; height:82px;">刀際效應-每週三海期盤勢經驗分享(2026/11)</td></tr>
+					<tr><td colspan="2" style=" height:40px;font-weight:bold;">2026/11/04&nbsp;&nbsp;2000~2030</td></tr>
+					<tr>
+                    	<td align="left" style="padding:0px; margin:0px; width:47px;"><img src="../images/btncar.jpg" style="margin:0px; padding:0px; width:100%; height:100%; border:none; "></td>
+                    	<td>價格&nbsp;
+                        	<font style=" color:#C98EBE; font-size:20px; font-weight:bold;">
+                            
+                                NT：2000
+                            </font>
+                        </td>
+                    </tr>
+					</table>
+                    </a>
+					<a href="/chinese/edu/educon.asp?ID=4356" class="type5 box">
+					<table width="200px" class="tbl"  align="left" style=" border:0px;margin:5px;" cellpadding="0" cellspacing="0">
+					<tr><td class="td1" colspan="2" height="200px" valign="top" style="padding:0" >
+                    <img src="/startacademy/Edu/4356/images/b01.jpg"  height="200px">
+                    <img src="/chinese/images/tag-5.png" >
+                    </td></tr>
+					<tr><td colspan="2" style="font-weight:bold; font-size:20px; color:black; height:82px;">刀際效應-每週三海期盤勢經驗分享(2026/12)</td></tr>
+					<tr><td colspan="2" style=" height:40px;font-weight:bold;">2026/12/02&nbsp;&nbsp;2000~2030</td></tr>
+					<tr>
+                    	<td align="left" style="padding:0px; margin:0px; width:47px;"><img src="../images/btncar.jpg" style="margin:0px; padding:0px; width:100%; height:100%; border:none; "></td>
+                    	<td>價格&nbsp;
+                        	<font style=" color:#C98EBE; font-size:20px; font-weight:bold;">
+                            
+                                NT：2000
+                            </font>
+                        </td>
+                    </tr>
+					</table>
+                    </a>
+					<a href="/chinese/edu/educon.asp?ID=4357" class="type5 box">
+					<table width="200px" class="tbl"  align="left" style=" border:0px;margin:5px;" cellpadding="0" cellspacing="0">
+					<tr><td class="td1" colspan="2" height="200px" valign="top" style="padding:0" >
+                    <img src="/startacademy/Edu/4357/images/b01.jpg"  height="200px">
+                    <img src="/chinese/images/tag-5.png" >
+                    </td></tr>
+					<tr><td colspan="2" style="font-weight:bold; font-size:20px; color:black; height:82px;">刀際效應-每週三海期盤勢經驗分享(2027/01)</td></tr>
+					<tr><td colspan="2" style=" height:40px;font-weight:bold;">2027/01/06&nbsp;&nbsp;2000~2030</td></tr>
+					<tr>
+                    	<td align="left" style="padding:0px; margin:0px; width:47px;"><img src="../images/btncar.jpg" style="margin:0px; padding:0px; width:100%; height:100%; border:none; "></td>
+                    	<td>價格&nbsp;
+                        	<font style=" color:#C98EBE; font-size:20px; font-weight:bold;">
+                            
+                                NT：2000
+                            </font>
+                        </td>
+                    </tr>
+					</table>
+                    </a>
+				
+            
+            </div>
+
+            <!--------------------Bottom Start-------------------->
+            
+<div id='gotop'><a href='#'><img src='/chinese/images/gotop.png' width='36' height='36' alt='top'></a></div>
+<script type="text/javascript" src="/jscript/gotop.js"></script>
+<div style="clear:both;text-align:center;padding-top:15px;font-size:12px;">
+    <div style=" border-top-style: solid; border-top-width: 1px; border-top-color: #CCCCCC;">
+        明星雲有限公司 統編 : 82893226 服務時間：9:30~17:30&nbsp;客服：<a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="added9ccdfccceccedded9ccdfcccecc83cec2c0">[email&#160;protected]</a>&nbsp;&nbsp;&nbsp;&nbsp;
+        <a href="/chinese/TermsOfUse.asp" style="text-decoration:none;color:#808080;">使用條款</a>&nbsp;&nbsp;
+        <a href="/chinese/Privacy.asp" style="text-decoration:none;color:#808080;">隱私權</a>
+    </div>
+</div>
+            <!--------------------Bottom End-------------------->          
+        </div>
+    </div>
+<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script></body>
+</html>

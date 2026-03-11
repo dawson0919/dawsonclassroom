@@ -1,0 +1,759 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dawson Classroom - 實戰交易宇宙</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary: #8b5cf6;
+            /* Violet */
+            --secondary: #3b82f6;
+            /* Blue */
+            --accent: #f43f5e;
+            /* Rose */
+            --text: #f8fafc;
+            --glass-bg: rgba(15, 23, 42, 0.4);
+            --glass-border: rgba(255, 255, 255, 0.1);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Inter', sans-serif;
+        }
+
+        body {
+            background-color: #050510;
+            color: var(--text);
+            overflow-x: hidden;
+            scroll-behavior: smooth;
+        }
+
+        /* Animated Uploaded Background Image */
+        .animated-bg {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100vw;
+            height: 100vh;
+            z-index: -2;
+            /* 預設載入同資料夾內的 星空圖，請將您上傳的圖片命名為 starry-sky.jpg 並放在此資料夾 */
+            background: url('starry-sky.jpg') center center;
+            background-size: cover;
+            /* 讓星空圖背景產生緩慢縮放與平移的動畫效果，達到「突變成動畫」的視覺感受 */
+            animation: bgAnimation 60s infinite alternate linear;
+            filter: brightness(0.6) contrast(1.2);
+        }
+
+        /* 將原本的 Canvas 改為輔助的星芒粒子層，疊加在圖片上增加立體感 */
+        #bg-canvas {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100vw;
+            height: 100vh;
+            z-index: -1;
+            pointer-events: none;
+            mix-blend-mode: screen;
+            opacity: 0.6;
+        }
+
+        @keyframes bgAnimation {
+            0% {
+                transform: scale(1) translate(0, 0);
+            }
+
+            50% {
+                transform: scale(1.15) translate(-2%, 2%);
+            }
+
+            100% {
+                transform: scale(1.3) translate(2%, -2%);
+            }
+        }
+
+        /* Navbar */
+        nav {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            padding: 1.2rem 5%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background: rgba(5, 5, 15, 0.5);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            border-bottom: 1px solid var(--glass-border);
+            z-index: 100;
+            transition: all 0.3s ease;
+        }
+
+        .logo {
+            font-size: 1.6rem;
+            font-weight: 800;
+            background: linear-gradient(135deg, #ffffff, #a78bfa, #60a5fa);
+            -webkit-background-clip: text;
+            background-clip: text;
+            -webkit-text-fill-color: transparent;
+            letter-spacing: 1px;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 2.5rem;
+            list-style: none;
+        }
+
+        .nav-links a {
+            color: #cbd5e1;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 0.95rem;
+            transition: color 0.3s ease;
+            position: relative;
+        }
+
+        .nav-links a:hover {
+            color: #ffffff;
+        }
+
+        .nav-links a::after {
+            content: '';
+            position: absolute;
+            width: 0%;
+            height: 2px;
+            bottom: -5px;
+            left: 0;
+            background-color: var(--primary);
+            transition: width 0.3s ease;
+        }
+
+        .nav-links a:hover::after {
+            width: 100%;
+        }
+
+        .btn-primary {
+            padding: 0.8rem 1.8rem;
+            border-radius: 50px;
+            background: linear-gradient(135deg, var(--primary), var(--secondary));
+            color: white;
+            text-decoration: none;
+            font-weight: 600;
+            border: none;
+            cursor: pointer;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            display: inline-block;
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 20px rgba(139, 92, 246, 0.4);
+        }
+
+        /* Hero Section */
+        .hero {
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            padding: 0 5%;
+            margin-top: 60px;
+        }
+
+        .hero h1 {
+            font-size: 4.5rem;
+            font-weight: 800;
+            margin-bottom: 1.5rem;
+            line-height: 1.2;
+            background: linear-gradient(to right, #ffffff, #c4b5fd);
+            -webkit-background-clip: text;
+            background-clip: text;
+            -webkit-text-fill-color: transparent;
+            animation: fadeInDown 1s ease-out;
+            max-width: 900px;
+        }
+
+        .hero p {
+            font-size: 1.25rem;
+            color: #e2e8f0;
+            text-shadow: 0 2px 4px rgba(0, 0, 0, 0.8);
+            max-width: 650px;
+            margin-bottom: 3rem;
+            line-height: 1.6;
+            animation: fadeInUp 1s ease-out 0.3s both;
+        }
+
+        .hero .buttons {
+            display: flex;
+            gap: 1.5rem;
+            animation: fadeInUp 1s ease-out 0.6s both;
+        }
+
+        .btn-outline {
+            padding: 0.8rem 1.8rem;
+            border-radius: 50px;
+            background: rgba(255, 255, 255, 0.05);
+            color: white;
+            text-decoration: none;
+            font-weight: 600;
+            border: 1px solid var(--glass-border);
+            cursor: pointer;
+            transition: all 0.3s ease;
+            backdrop-filter: blur(5px);
+        }
+
+        .btn-outline:hover {
+            background: rgba(255, 255, 255, 0.15);
+            border-color: rgba(255, 255, 255, 0.4);
+        }
+
+        /* Courses Section */
+        .courses-section {
+            padding: 6rem 5%;
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+
+        .section-header {
+            text-align: center;
+            margin-bottom: 4rem;
+        }
+
+        .section-header h2 {
+            font-size: 2.8rem;
+            font-weight: 800;
+            margin-bottom: 1rem;
+            color: #ffffff;
+            text-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+        }
+
+        .section-header p {
+            color: #cbd5e1;
+            font-size: 1.15rem;
+            max-width: 600px;
+            margin: 0 auto;
+            text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
+        }
+
+        .courses-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+            gap: 2.5rem;
+        }
+
+        /* Glassmorphism Course Card */
+        .course-card-link {
+            text-decoration: none;
+            color: inherit;
+            display: block;
+        }
+
+        .course-card {
+            background: rgba(15, 23, 42, 0.55);
+            border: 1px solid rgba(255, 255, 255, 0.15);
+            border-radius: 24px;
+            overflow: hidden;
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            transition: transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275), box-shadow 0.4s ease, border-color 0.4s ease;
+            position: relative;
+            display: flex;
+            flex-direction: column;
+            cursor: pointer;
+            height: 100%;
+        }
+
+        .course-card-link:hover .course-card {
+            transform: translateY(-12px);
+            box-shadow: 0 25px 50px rgba(0, 0, 0, 0.6), 0 0 30px rgba(139, 92, 246, 0.3);
+            border-color: rgba(167, 139, 250, 0.6);
+        }
+
+        /* Interactive subtle glow on hover */
+        .course-card::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            border-radius: 24px;
+            background: radial-gradient(800px circle at var(--mouse-x, 0) var(--mouse-y, 0), rgba(139, 92, 246, 0.2), transparent 40%);
+            z-index: -1;
+            opacity: 0;
+            transition: opacity 0.5s;
+        }
+
+        .course-card-link:hover .course-card::before {
+            opacity: 1;
+        }
+
+        .course-image {
+            width: 100%;
+            height: 220px;
+            background: #1e1e38;
+            /* Placeholder */
+            position: relative;
+            overflow: hidden;
+        }
+
+        .course-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.6s ease;
+        }
+
+        .course-card-link:hover .course-image img {
+            transform: scale(1.05);
+            /* Slight zoom on hover */
+        }
+
+        /* Cool Gradient Placeholders since we don't have images */
+        .img-1 {
+            background: linear-gradient(135deg, #ff9a9e 0%, #fecfef 99%, #fecfef 100%);
+        }
+
+        .img-2 {
+            background: linear-gradient(135deg, #a18cd1 0%, #fbc2eb 100%);
+        }
+
+        .img-3 {
+            background: linear-gradient(135deg, #84fab0 0%, #8fd3f4 100%);
+        }
+
+        .img-4 {
+            background: linear-gradient(135deg, #fccb90 0%, #d57eeb 100%);
+        }
+
+        .img-5 {
+            background: linear-gradient(135deg, #e0c3fc 0%, #8ec5fc 100%);
+        }
+
+        .img-6 {
+            background: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);
+        }
+
+        .category-badge {
+            position: absolute;
+            top: 15px;
+            left: 15px;
+            background: rgba(0, 0, 0, 0.6);
+            backdrop-filter: blur(8px);
+            color: #fff;
+            padding: 0.4rem 1rem;
+            border-radius: 20px;
+            font-size: 0.8rem;
+            font-weight: 600;
+            border: 1px solid rgba(255, 255, 255, 0.3);
+            z-index: 2;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+        }
+
+        .course-content {
+            padding: 2rem;
+            flex-grow: 1;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .course-title {
+            font-size: 1.35rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+            line-height: 1.4;
+            color: #ffffff;
+        }
+
+        .course-desc {
+            color: #cbd5e1;
+            font-size: 0.95rem;
+            margin-bottom: 2rem;
+            line-height: 1.6;
+            display: -webkit-box;
+            -webkit-line-clamp: 2;
+            line-clamp: 2;
+            -webkit-box-orient: vertical;
+            overflow: hidden;
+            flex-grow: 1;
+        }
+
+        .course-footer {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding-top: 1.5rem;
+            border-top: 1px solid var(--glass-border);
+        }
+
+        .instructor {
+            display: flex;
+            align-items: center;
+            gap: 0.8rem;
+        }
+
+        .avatar {
+            width: 38px;
+            height: 38px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, #64748b, #334155);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+            font-size: 1rem;
+            border: 2px solid rgba(255, 255, 255, 0.2);
+            color: #f8fafc;
+        }
+
+        .instructor-name {
+            font-size: 0.95rem;
+            color: #f1f5f9;
+            font-weight: 600;
+        }
+
+        .price {
+            font-size: 1.3rem;
+            font-weight: 800;
+            color: #60a5fa;
+            text-shadow: 0 0 10px rgba(59, 130, 246, 0.4);
+        }
+
+        /* Annotations & animations */
+        @keyframes fadeInDown {
+            from {
+                opacity: 0;
+                transform: translateY(-40px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(40px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* Footer */
+        footer {
+            text-align: center;
+            padding: 4rem 2rem;
+            border-top: 1px solid var(--glass-border);
+            margin-top: 6rem;
+            background: rgba(5, 5, 15, 0.8);
+            backdrop-filter: blur(10px);
+        }
+
+        footer p {
+            color: #94a3b8;
+            font-size: 1rem;
+        }
+
+        /* About Section */
+        .about-section {
+            padding: 6rem 5%;
+            max-width: 900px;
+            margin: 0 auto;
+            text-align: center;
+        }
+
+        .about-content {
+            background: rgba(15, 23, 42, 0.55);
+            border: 1px solid rgba(255, 255, 255, 0.15);
+            border-radius: 24px;
+            padding: 3rem 2rem;
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+            color: #e2e8f0;
+            font-size: 1.15rem;
+            line-height: 1.8;
+            letter-spacing: 0.5px;
+        }
+
+        .about-features {
+            margin: 2.5rem 0;
+            text-align: left;
+            display: inline-block;
+        }
+
+        .about-features p {
+            text-align: center;
+            margin-bottom: 1rem;
+            color: #ffffff;
+            font-weight: 600;
+        }
+
+        .feature-item {
+            margin-bottom: 0.8rem;
+            font-size: 1.1rem;
+            color: #cbd5e1;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            justify-content: center;
+        }
+
+        .about-warning {
+            margin-top: 3rem;
+            padding-top: 2rem;
+            border-top: 1px dashed rgba(255, 255, 255, 0.2);
+            color: #cbd5e1;
+        }
+
+        .about-warning strong {
+            color: #fbbf24;
+            font-size: 1.25rem;
+        }
+
+        .about-warning p {
+            margin-bottom: 0.8rem;
+        }
+
+        /* Responsive */
+        @media (max-width: 992px) {
+            .hero h1 {
+                font-size: 3.5rem;
+            }
+
+            .nav-links {
+                display: none;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 2.8rem;
+            }
+
+            .hero p {
+                font-size: 1.1rem;
+            }
+
+            .hero .buttons {
+                flex-direction: column;
+                width: 100%;
+                max-width: 300px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Animated Uploaded Background Image Layer -->
+    <div class="animated-bg"></div>
+
+    <!-- Supplementary Sparkle Layer (Canvas) -->
+    <canvas id="bg-canvas"></canvas>
+
+    <nav>
+        <div class="logo">DawsonClassroom</div>
+        <ul class="nav-links">
+            <li><a href="#">首頁</a></li>
+            <li><a href="#courses">熱門課程</a></li>
+            <li><a href="#about">關於我們</a></li>
+        </ul>
+        <a href="#courses" class="btn-primary">探索課程</a>
+    </nav>
+
+    <section class="hero">
+        <h1>探索交易的浩瀚宇宙</h1>
+        <p>在這裡，每一堂課都是指引您進步的恆星。讓期貨小白不再盲從，學習系統化交易，有紀律的執行交易策略，讓你超越過去的自己，找到穩定獲利方程式</p>
+        <div class="buttons">
+            <a href="#courses" class="btn-primary">瀏覽課程大全</a>
+        </div>
+    </section>
+
+    <section id="courses" class="courses-section">
+        <div class="section-header">
+            <h2>熱門精選課程</h2>
+            <p>選擇最適合您的交易策略路徑，讓您的投資視野更進一步</p>
+        </div>
+
+        <div class="courses-grid" id="course-container">
+            <!-- Course 1 -->
+            <a href="https://www.staraca.com/chinese/edu//chinese/edu/educon.asp?ID=4477" target="_blank"
+                class="course-card-link">
+                <div class="course-card">
+                    <div class="course-image">
+                        <img src="course1.jpg" alt="刀派手單台指期專修課">
+                        <span class="category-badge">台指期</span>
+                    </div>
+                    <div class="course-content">
+                        <h3 class="course-title">刀派手單台指期專修課</h3>
+                        <p class="course-desc">學費：NT $12,000</p>
+                        <div class="course-footer">
+                            <div class="instructor">
+                                <div class="avatar">D</div>
+                                <span class="instructor-name">Dawson</span>
+                            </div>
+                            <div class="price">立刻報名</div>
+                        </div>
+                    </div>
+                </div>
+            </a>
+
+            <!-- Course 5 (now 2) -->
+            <a href="https://www.staraca.com/chinese/edu//chinese/edu/educon.asp?ID=4472" target="_blank"
+                class="course-card-link">
+                <div class="course-card">
+                    <div class="course-image">
+                        <img src="course2.jpg" alt="刀派期權實戰必備戰技">
+                        <span class="category-badge">選擇權</span>
+                    </div>
+                    <div class="course-content">
+                        <h3 class="course-title">刀派期權實戰必備戰技</h3>
+                        <p class="course-desc">學費：NT $13,500</p>
+                        <div class="course-footer">
+                            <div class="instructor">
+                                <div class="avatar">O</div>
+                                <span class="instructor-name">Options</span>
+                            </div>
+                            <div class="price">立刻報名</div>
+                        </div>
+                    </div>
+                </div>
+            </a>
+
+            <!-- Course 6 (now 3) -->
+            <a href="https://www.staraca.com/chinese/edu//chinese/edu/educon.asp?ID=4470" target="_blank"
+                class="course-card-link">
+                <div class="course-card">
+                    <div class="course-image">
+                        <img src="course3.jpg" alt="我是交易員">
+                        <span class="category-badge">實戰交易</span>
+                    </div>
+                    <div class="course-content">
+                        <h3 class="course-title">我是交易員</h3>
+                        <p class="course-desc">學費：NT $8,000</p>
+                        <div class="course-footer">
+                            <div class="instructor">
+                                <div class="avatar">T</div>
+                                <span class="instructor-name">Trader</span>
+                            </div>
+                            <div class="price">立刻報名</div>
+                        </div>
+                    </div>
+                </div>
+            </a>
+        </div>
+    </section>
+
+    <section id="about" class="about-section">
+        <div class="section-header">
+            <h2>簡介</h2>
+        </div>
+        <div class="about-content">
+            <p>刀神期權學院 | 官方頁面</p>
+            <p>專注海外期貨・選擇權策略・量化交易</p>
+
+            <div class="about-features">
+                <p>這裡會分享：</p>
+                <div class="feature-item">📘 實用清晰的交易邏輯</div>
+                <div class="feature-item">🧭 風險控管</div>
+                <div class="feature-item">📊 市場觀察與盤勢解析</div>
+                <div class="feature-item">🤖 量化工具與策略思維</div>
+            </div>
+
+            <div class="about-warning">
+                <p>⚠️ <strong>請注意</strong> ⚠️</p>
+                <p>本專頁及刀神本人「絕對不會主動私訊您」</p>
+                <p>任何要求加LINE、匯款或推銷課程的「假冒帳號」皆非官方，請務必提高警覺，避免受騙 ‼️</p>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <p>【投資警語】期貨交易具備高風險，學習上課不保證獲利，學習課程後能讓您的期貨知識大幅成長，但請評估自身條件與風險承受度後再行下單。</p>
+        <p style="margin-top: 1rem; color: #64748b; font-size: 0.9rem;">© 2026 Dawson Classroom. 讓交易如宇宙般無垠無界。</p>
+    </footer>
+
+    <!-- Background Animation Script -->
+    <script>
+        // Only drawing a few stars/sparkles since the main image is the background
+        const canvas = document.getElementById('bg-canvas');
+        const ctx = canvas.getContext('2d');
+
+        function resize() {
+            canvas.width = window.innerWidth;
+            canvas.height = window.innerHeight;
+        }
+        window.addEventListener('resize', resize);
+        resize();
+
+        const stars = [];
+        const numStars = window.innerWidth < 768 ? 100 : 250; // Reduced star count
+
+        for (let i = 0; i < numStars; i++) {
+            stars.push({
+                x: Math.random() * canvas.width,
+                y: Math.random() * canvas.height,
+                size: Math.random() * 2,
+                speed: Math.random() * 0.5 + 0.1,
+                opacity: Math.random()
+            });
+        }
+
+        function animate() {
+            ctx.clearRect(0, 0, canvas.width, canvas.height);
+
+            for (let i = 0; i < numStars; i++) {
+                let star = stars[i];
+
+                // Twinkling effect
+                star.opacity += (Math.random() - 0.5) * 0.1;
+                if (star.opacity > 1) star.opacity = 1;
+                if (star.opacity < 0.1) star.opacity = 0.1;
+
+                ctx.beginPath();
+                ctx.arc(star.x, star.y, star.size, 0, Math.PI * 2);
+                ctx.fillStyle = `rgba(255, 255, 255, ${star.opacity})`;
+                ctx.fill();
+
+                // Slowly fall down
+                star.y += star.speed;
+                if (star.y > canvas.height) {
+                    star.y = 0;
+                    star.x = Math.random() * canvas.width;
+                }
+            }
+
+            requestAnimationFrame(animate);
+        }
+
+        animate();
+
+        // Add mouse move interactive lighting effect to cards
+        document.querySelectorAll('.course-card-link').forEach(link => {
+            const card = link.querySelector('.course-card');
+            if (card) {
+                link.addEventListener('mousemove', e => {
+                    const rect = card.getBoundingClientRect();
+                    const x = e.clientX - rect.left;
+                    const y = e.clientY - rect.top;
+                    card.style.setProperty('--mouse-x', `${x}px`);
+                    card.style.setProperty('--mouse-y', `${y}px`);
+                });
+            }
+        });
+    </script>
+</body>
+
+</html>
